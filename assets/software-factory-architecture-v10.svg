@@ -1,0 +1,347 @@
+<svg role="img" aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg" width="3420" height="3500" viewBox="0 0 3420 3500"><title id="title">Software factory architecture: governed verification changes</title><desc id="desc">Human authority governs delivery and factory improvement. Proposed changes to verification pass through protected reference evaluation and independent authorization before staged adoption. Shared observability retains verdicts and adoption history. Definitions, memory and execution infrastructure remain explicit.</desc><defs>
+<marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill-opacity="0.58" d="M0 0 L10 5 L0 10 Z" fill="#7561C9"/></marker>
+<marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill-opacity="0.58" d="M0 0 L10 5 L0 10 Z" fill="#398166"/></marker>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill-opacity="0.58" d="M0 0 L10 5 L0 10 Z" fill="#AF7935"/></marker>
+<marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill-opacity="0.58" d="M0 0 L10 5 L0 10 Z" fill="#686571"/></marker>
+</defs>
+<rect width="3420" height="3500" fill="#F8F7F3"/>
+<text x="90" y="90" font-family="Arial,sans-serif" font-size="60" font-weight="700" fill="#24242B">Software factory architecture</text>
+<text x="92" y="139" font-family="Arial,sans-serif" font-size="31" font-weight="400" fill="#686571">Deliver software. Automatically improve the factory that delivers it. Keep human authority explicit.</text>
+<rect x="90" y="190" width="3240" height="170" rx="12" fill="#EEEAF8" stroke="#D9D1EF" stroke-width="2"/>
+<text x="120" y="231" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#7561C9">HUMAN PLANE / SET DIRECTION, AUTHOR DEFINITIONS, OBSERVE AND GOVERN</text>
+<text x="120" y="279" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#24242B">Intent &amp; priorities</text>
+<text x="120" y="323" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Define outcomes and operating boundaries.</text>
+<text x="920" y="279" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#24242B">Rules, skills &amp; policies</text>
+<text x="920" y="323" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Author files; observe and govern changes.</text>
+<text x="1720" y="279" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#24242B">Acceptance &amp; risk</text>
+<text x="1720" y="323" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Protect criteria; define sufficient evidence.</text>
+<text x="2520" y="279" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#24242B">Delegated authority</text>
+<text x="2520" y="323" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Set permissions, budgets and escalation rights.</text>
+<defs><marker id="obs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill-opacity="0.58" d="M0 0 L10 5 L0 10 Z" fill="#4D7888"/></marker></defs>
+<rect x="90" y="430" width="2420" height="300" rx="12" fill="#EDF3F5" stroke="#AFC6CE" stroke-width="2"/>
+<text x="120" y="474" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#4D7888">SHARED OBSERVABILITY &amp; MONITORING</text>
+<text x="120" y="517" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#686571">One evidence layer for human oversight and automatic factory improvement.</text>
+<text x="120" y="573" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#24242B">Runs &amp; agent sessions</text>
+<text x="120" y="615" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Traces · tool calls · cost · latency · retries</text>
+<text x="925" y="573" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#24242B">Quality &amp; outcomes</text>
+<text x="925" y="615" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Findings · evals · SLOs · user/business outcomes</text>
+<text x="1730" y="573" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#24242B">Dashboards, alerts &amp; audit</text>
+<text x="1730" y="615" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Drift · rollout regressions · policy events</text>
+<rect x="120" y="650" width="2360" height="60" rx="8" fill="white" stroke="#C9D9DF" stroke-width="2"/>
+<text x="140" y="689" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#4D7888">DECISION &amp; EVIDENCE RECORD</text>
+<text x="690" y="675" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#24242B">Package + artifact revisions · Policy + verifier versions · Evidence links · Verdict + authorized action</text>
+<text x="690" y="703" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#686571">Durable history · Expiry / invalidation · Overrides · Outcomes · Links to source traces</text>
+<rect x="90" y="780" width="2420" height="350" rx="14" fill="#F8F1E5" stroke="#CDB487" stroke-width="2"/>
+<text x="120" y="823" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#AF7935">VERIFICATION-CHANGE GATE / CHANGES TO THE CHECKER ARE WORK PACKAGES</text>
+<rect x="120" y="850" width="560" height="165" rx="8" fill="white" stroke="#DDC7A4" stroke-width="2"/>
+<text x="140" y="892" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">Propose a version</text>
+<text x="140" y="948" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Candidate checks + rationale</text>
+<path d="M680 932 H714" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="720" y="850" width="560" height="165" rx="8" fill="white" stroke="#DDC7A4" stroke-width="2"/>
+<text x="740" y="892" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">Challenge the verification</text>
+<text x="740" y="948" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Valid, known-bad + held-out cases</text>
+<path d="M1280 932 H1314" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1320" y="850" width="560" height="165" rx="8" fill="white" stroke="#DDC7A4" stroke-width="2"/>
+<text x="1340" y="892" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">Authorize adoption</text>
+<text x="1340" y="948" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Independent rights; protected policy</text>
+<path d="M1880 932 H1914" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1920" y="850" width="560" height="165" rx="8" fill="white" stroke="#DDC7A4" stroke-width="2"/>
+<text x="1940" y="892" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">Stage and observe</text>
+<text x="1940" y="948" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Compare verdicts; hold or restore</text>
+<text x="120" y="1062" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#AF7935">PROTECTED REFERENCE EVIDENCE</text>
+<text x="630" y="1062" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#24242B">Intent + contracts · Valid / invalid behaviors · Original failures · Coverage and risk deltas</text>
+<text x="120" y="1100" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Criteria changes require separately authorized acceptance. Different model ≠ independent authority or evidence.</text>
+<path d="M2220 1130 V1210 H1300 V1234" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1388" y="1170" width="595.5" height="36" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1400" y="1193" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#AF7935">authorized verifier version → active verification pressure</text>
+<path d="M2510 1030 H2585 V640 H2516" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2510 1030 H2585 V640 H2516" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round" marker-end="url(#obs)"/>
+<rect x="1983" y="741" width="280.171875" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1995" y="763" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#4D7888">verdicts + adoption history</text>
+<g transform="translate(0 740)">
+<rect x="90" y="500" width="650" height="310" rx="12" fill="#F1EEF9" stroke="#7561C9" stroke-width="2"/>
+<text x="115" y="542" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#7561C9">FORWARD PRESSURE</text>
+<text x="115" y="581" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#686571">INPUT SIGNALS</text>
+<text x="115" y="619" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Customer requirements · Product goals</text>
+<text x="115" y="655" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">User requests · Business constraints</text>
+<text x="115" y="714" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Turn demand into prioritized, scoped work.</text>
+<text x="115" y="780" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#7561C9">OUT → Intent &amp; scope</text>
+<rect x="975" y="500" width="650" height="310" rx="12" fill="#F8F1E5" stroke="#AF7935" stroke-width="2"/>
+<text x="1000" y="542" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#AF7935">VERIFICATION PRESSURE</text>
+<text x="1000" y="581" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#686571">INPUT SIGNALS</text>
+<text x="1000" y="619" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Tests · Linters · Type checks · Security</text>
+<text x="1000" y="655" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">AI review · Risk judges · Behavioral evals</text>
+<text x="1000" y="714" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Turn findings into the next iteration.</text>
+<text x="1000" y="780" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#AF7935">OUT → Revise / retest / stop</text>
+<rect x="1860" y="500" width="650" height="310" rx="12" fill="#EDF4F0" stroke="#398166" stroke-width="2"/>
+<text x="1885" y="542" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#398166">BACKPRESSURE</text>
+<text x="1885" y="581" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#686571">INPUT SIGNALS</text>
+<text x="1885" y="619" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Crashes · Bugs · CVEs · Drift · Codebase health</text>
+<text x="1885" y="655" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Production feedback · Performance gaps</text>
+<text x="1885" y="714" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Turn observed software health into corrective action.</text>
+<text x="1885" y="780" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#398166">OUT → New work + operational recovery</text>
+<rect x="65" y="970" width="2470" height="650" rx="22" fill="#F1EFF6" stroke="#DCD6E8" stroke-width="2"/>
+<path d="M295 810 V930 H480 V1024" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<circle cx="295" cy="810" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<rect x="488" y="933" width="204.984375" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="500" y="955" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#7561C9">prioritized demand</text>
+<path d="M1405 1030 V816" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="1405" cy="810" r="6" fill="white" stroke="#AF7935" stroke-width="3"/>
+<rect x="1417" y="940" width="202.546875" height="34" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1429" y="961" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#AF7935">verification findings</text>
+<path d="M1060 810 V882 H795 V1024" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="1060" cy="810" r="6" fill="white" stroke="#AF7935" stroke-width="3"/>
+<rect x="794" y="844" width="255.015625" height="34" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="806" y="865" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#AF7935">findings → revise / retest</text>
+<path d="M795 882 H380 V1024" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M795 882 H380 V1024" fill="none" stroke="#AF7935" stroke-width="3" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="795" cy="882" r="5" fill="#AF7935"/>
+<rect x="388" y="840" width="140.6875" height="34" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="400" y="861" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#AF7935">clarify scope</text>
+<path d="M2360 1030 V816" fill="none" stroke="#398166" stroke-width="3" stroke-linejoin="round" marker-end="url(#g)"/>
+<circle cx="2360" cy="810" r="6" fill="white" stroke="#398166" stroke-width="3"/>
+<rect x="1938" y="939" width="266.125" height="34" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1950" y="960" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#398166">telemetry + user feedback</text>
+<text x="90" y="999" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">01 / DELIVERY PLANE</text>
+<rect x="90" y="1030" width="440" height="345" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<text x="114" y="1072" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#7561C9">01</text>
+<text x="114" y="1116" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#24242B">Intent &amp; scope</text>
+<text x="114" y="1163" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Challenge the plan against intent.</text>
+<text x="114" y="1210" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Define behavior, ownership,</text>
+<text x="114" y="1243" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">acceptance criteria and the</text>
+<text x="114" y="1276" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">operating domain.</text>
+<text x="114" y="1342" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#24242B">Create the work package</text>
+<path d="M530 1208 H579" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="585" y="1030" width="440" height="345" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<text x="609" y="1072" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#7561C9">02</text>
+<text x="609" y="1116" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#24242B">Execute</text>
+<text x="609" y="1163" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Engineer + agent, or delegated</text>
+<text x="609" y="1197" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">agents.</text>
+<text x="609" y="1244" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Isolated work, durable state,</text>
+<text x="609" y="1277" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">recovery and replaceable tools.</text>
+<text x="609" y="1342" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#24242B">Bounded execution</text>
+<path d="M1025 1208 H1074" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="1080" y="1030" width="440" height="345" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<text x="1104" y="1072" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#7561C9">03</text>
+<text x="1104" y="1116" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#24242B">Verify independently</text>
+<text x="1104" y="1163" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Challenge implementation +</text>
+<text x="1104" y="1197" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">checks.</text>
+<text x="1104" y="1244" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Protected criteria; code, security,</text>
+<text x="1104" y="1277" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">behavior and system impact.</text>
+<text x="1104" y="1342" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#24242B">The author cannot self-approve.</text>
+<path d="M1520 1208 H1569" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="1575" y="1030" width="440" height="345" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<text x="1599" y="1072" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#7561C9">04</text>
+<text x="1599" y="1116" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#24242B">Authorize</text>
+<text x="1599" y="1163" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Fresh evidence + policy +</text>
+<text x="1599" y="1197" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">authority.</text>
+<text x="1599" y="1244" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Pass · send back · hold · block.</text>
+<text x="1599" y="1277" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Separate rights to merge and</text>
+<text x="1599" y="1310" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">deploy.</text>
+<text x="1599" y="1342" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#24242B">Quality is not authority.</text>
+<path d="M2015 1208 H2064" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="2070" y="1030" width="440" height="345" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<text x="2094" y="1072" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#7561C9">05</text>
+<text x="2094" y="1116" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#24242B">Release &amp; observe</text>
+<text x="2094" y="1163" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#24242B">Stage rollout; measure outcomes.</text>
+<text x="2094" y="1210" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Hold / halt · flag off · isolate. Restore</text>
+<text x="2094" y="1243" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">/ roll back when safe.</text>
+<text x="2094" y="1342" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#24242B">Contain first; escalate with evidence.</text>
+<rect x="90" y="1470" width="2420" height="120" rx="10" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="120" y="1508" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">VERSIONED WORK PACKAGE / SHARED ACROSS DELIVERY</text>
+<text x="120" y="1545" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#24242B">Intent + acceptance</text>
+<text x="120" y="1577" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">Outcome · boundary · owner · required proof</text>
+<text x="925" y="1545" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#24242B">Linked change set</text>
+<text x="925" y="1577" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">PRs + dependencies · Build / release identifiers</text>
+<text x="1730" y="1545" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#24242B">Freshness + release conditions</text>
+<text x="1730" y="1577" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">Relevant input changes invalidate approval</text>
+<circle cx="2510" cy="685" r="6" fill="white" stroke="#398166" stroke-width="3"/>
+<path d="M2510 685 H2550 V1655 H55 V1210 H84" fill="none" stroke="#398166" stroke-width="3" stroke-linejoin="round" marker-end="url(#g)"/>
+<path d="M2550 1290 H2516" fill="none" stroke="#398166" stroke-width="3" stroke-linejoin="round" marker-end="url(#g)"/>
+<circle cx="2550" cy="1290" r="5" fill="#398166"/>
+<rect x="378" y="1617" width="508.484375" height="36" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="390" y="1640" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#398166">corrective work → reprioritize, rescope or repair</text>
+<rect x="1846" y="1618" width="339.46875" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1858" y="1640" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#398166">contain / recover within authority</text>
+<path d="M455 1730 H2200" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M455 1730 H2200" fill="none" stroke="#686571" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 7"/>
+<path d="M455 1800 V1730" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M455 1800 V1730" fill="none" stroke="#686571" stroke-width="3" stroke-linejoin="round" marker-end="url(#m)" stroke-dasharray="8 7"/>
+<path d="M1300 1800 V1730" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M1300 1800 V1730" fill="none" stroke="#686571" stroke-width="3" stroke-dasharray="7 6" marker-start="url(#m)" marker-end="url(#m)"/>
+<path d="M2145 1800 V1730" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2145 1800 V1730" fill="none" stroke="#686571" stroke-width="3" stroke-dasharray="7 6" marker-start="url(#m)" marker-end="url(#m)"/>
+<path d="M1300 1730 V1626" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M1300 1730 V1626" fill="none" stroke="#686571" stroke-width="3" stroke-dasharray="7 6" marker-start="url(#m)" marker-end="url(#m)"/>
+<rect x="1378" y="1692" width="498.90625" height="36" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1390" y="1715" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">definitions · memory read/write · calls + results</text>
+<g transform="translate(0 150)">
+<rect x="90" y="1650" width="730" height="590" rx="12" fill="#F1EEF9" stroke="#BEB1E4" stroke-width="2"/>
+<rect x="935" y="1650" width="730" height="590" rx="12" fill="white" stroke="#D8D5D0" stroke-width="2"/>
+<rect x="1780" y="1650" width="730" height="590" rx="12" fill="#F1EEF9" stroke="#BEB1E4" stroke-width="2"/>
+<text x="118" y="1695" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#7561C9">SWF ARTIFACTS</text>
+<text x="118" y="1735" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Versioned files used by the factory</text>
+<rect x="118" y="1770" width="674" height="112" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="139" y="1809" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#7561C9">RULES</text>
+<text x="139" y="1849" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Coding rules, invariants and conventions</text>
+<rect x="118" y="1910" width="674" height="112" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="139" y="1949" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#7561C9">SKILLS</text>
+<text x="139" y="1989" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Reusable procedures and domain methods</text>
+<rect x="118" y="2050" width="674" height="112" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="139" y="2089" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#7561C9">POLICIES</text>
+<text x="139" y="2129" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Permissions, risk, escalation and release rules</text>
+<text x="118" y="2207" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#686571">Versioned · evaluated · observable · reversible</text>
+<text x="963" y="1695" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">SHARED MEMORY &amp; KNOWLEDGE</text>
+<text x="963" y="1735" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Working memory + durable organizational knowledge</text>
+<rect x="963" y="1770" width="674" height="155" rx="8" fill="#F8F7F3" stroke="#D8D5D0" stroke-width="2"/>
+<text x="985" y="1811" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#7561C9">1 / SHORT-TERM MEMORY</text>
+<text x="985" y="1852" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Agent session context · Review notes</text>
+<text x="985" y="1883" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Active hypotheses · Work-in-progress state</text>
+<path d="M1000 1925 V2004" fill="none" stroke="#7561C9" stroke-width="3" stroke-dasharray="none" marker-start="url(#p)" marker-end="url(#p)"/>
+<text x="1030" y="1960" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#7561C9">↑ Retrieve into working memory</text>
+<text x="1030" y="1990" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#686571">↓ Validate + consolidate · humans or SWF</text>
+<rect x="963" y="2010" width="674" height="155" rx="8" fill="#F8F7F3" stroke="#D8D5D0" stroke-width="2"/>
+<text x="985" y="2051" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#7561C9">2 / LONG-TERM KNOWLEDGE</text>
+<text x="985" y="2090" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">Validated incident history · Accepted decisions</text>
+<text x="985" y="2119" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">Code, dependencies and ownership references</text>
+<text x="985" y="2148" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#686571">Domain knowledge and established lessons</text>
+<text x="963" y="2207" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#686571">Source-backed · scoped · current · reviewable</text>
+<text x="1808" y="1695" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#7561C9">EXECUTION INFRASTRUCTURE</text>
+<text x="1808" y="1735" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Build or integrate; keep capabilities replaceable</text>
+<rect x="1808" y="1770" width="326" height="190" rx="8" fill="white" stroke="#7561C9" stroke-width="2"/>
+<text x="1825" y="1813" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#7561C9">AGENT POOL</text>
+<text x="1825" y="1858" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Registered specialists,</text>
+<text x="1825" y="1889" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">versions, limits and routing</text>
+<rect x="2150" y="1770" width="326" height="190" rx="8" fill="white" stroke="#7561C9" stroke-width="2"/>
+<text x="2167" y="1813" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#7561C9">TOOL POOL</text>
+<text x="2167" y="1858" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">APIs, connectors,</text>
+<text x="2167" y="1889" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">permissions and</text>
+<text x="2167" y="1920" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">integrations</text>
+<rect x="1808" y="1980" width="326" height="190" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="1825" y="2023" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Runtimes</text>
+<text x="1825" y="2068" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">Isolated environments,</text>
+<text x="1825" y="2099" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">compute and sandboxes</text>
+<rect x="2150" y="1980" width="326" height="190" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2167" y="2023" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Orchestration</text>
+<text x="2167" y="2068" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">State, queues, recovery,</text>
+<text x="2167" y="2099" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#686571">budgets and telemetry</text>
+<text x="1808" y="2207" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#686571">Runs both delivery agents and verification systems</text>
+</g>
+<rect x="2670" y="500" width="660" height="1290" rx="12" fill="#EEEAF8" stroke="#BEB1E4" stroke-width="2"/>
+<text x="2698" y="545" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#7561C9">02 / SOFTWARE FACTORY PLANE</text>
+<text x="2698" y="585" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#24242B">Automatically improve the factory</text>
+<rect x="2698" y="625" width="604" height="140" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2720" y="662" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">OBSERVE</text>
+<text x="2720" y="703" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Shared telemetry, agent runs, findings, production</text>
+<text x="2720" y="735" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">outcomes, cost and human effort.</text>
+<path d="M3000 765 V789" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="2698" y="795" width="604" height="140" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2720" y="832" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">DIAGNOSE</text>
+<text x="2720" y="873" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Find recurring failures in context, agents, tools,</text>
+<text x="2720" y="905" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">workflows or checks.</text>
+<path d="M3000 935 V959" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="2698" y="965" width="604" height="180" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2720" y="1002" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">MAKE CHANGES</text>
+<text x="2720" y="1043" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Edit definition files; consolidate knowledge.</text>
+<text x="2720" y="1075" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Suggest or configure agents, tools and runtimes.</text>
+<text x="2720" y="1107" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Improve verification.</text>
+<path d="M3000 1145 V1169" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="2698" y="1175" width="604" height="180" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2720" y="1212" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">EVALUATE INDEPENDENTLY</text>
+<text x="2720" y="1253" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Protected reference cases + failure replay.</text>
+<text x="2720" y="1285" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Changed checks go through the separate gate</text>
+<text x="2720" y="1317" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">above.</text>
+<path d="M3000 1355 V1379" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<rect x="2698" y="1385" width="604" height="175" rx="8" fill="white" stroke="#D9D1EF" stroke-width="2"/>
+<text x="2720" y="1422" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#7561C9">ROLLOUT &amp; LEARN</text>
+<text x="2720" y="1463" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Canary and compare outcomes. Contain failures;</text>
+<text x="2720" y="1495" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">restore only when safe. Record outcomes in</text>
+<text x="2720" y="1527" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">shared evidence.</text>
+<text x="2698" y="1595" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#7561C9">IMPROVES FOUR SURFACES</text>
+<text x="2698" y="1635" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Definitions as files</text>
+<text x="2698" y="1666" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Memory + knowledge</text>
+<text x="2698" y="1697" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Verification systems</text>
+<text x="2698" y="1728" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#24242B">Agents, tools and runtimes</text>
+<text x="2698" y="1760" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#686571">Within human-defined authority.</text>
+<path d="M2670 1070 H2615 V420 H72 V240 H84" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<circle cx="2670" cy="1070" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<rect x="368" y="379" width="612.328125" height="37" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="380" y="403" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#7561C9">candidate verifier version → independent adoption gate</text>
+<path d="M2800 1790 V2495 H455 V2396" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<circle cx="2800" cy="1790" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<rect x="788" y="2454" width="417.25" height="38" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="800" y="2479" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#7561C9">edit rules, skills and policies as files</text>
+<path d="M3150 1790 V2430 H2145 V2396" fill="none" stroke="#7561C9" stroke-width="3" stroke-dasharray="none" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="3150" cy="1790" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<rect x="2288" y="2389" width="527.1875" height="38" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="2300" y="2414" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#7561C9">configure / inspect agents, tools and runtimes</text>
+<path d="M2950 1790 V2460 H1300 V2396" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2950 1790 V2460 H1300 V2396" fill="none" stroke="#7561C9" stroke-width="3" stroke-dasharray="none" marker-start="url(#p)" marker-end="url(#p)"/>
+<circle cx="2950" cy="1790" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<rect x="1338" y="2423" width="548.234375" height="37" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1350" y="2447" font-family="Arial,sans-serif" font-size="24" font-weight="400" fill="#7561C9">read / write memory · validate durable knowledge</text>
+<text x="90" y="2557" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#24242B">Governed improvement: SWF changes are versioned, independently evaluated and reversible. Authority expands through explicit human decisions.</text>
+</g>
+<path d="M3000 360 V1234" fill="none" stroke="#686571" stroke-width="3" stroke-linejoin="round" marker-end="url(#m)" stroke-dasharray="8 7"/>
+<rect x="3012" y="1126" width="127.328125" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="3024" y="1148" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#686571">authority +</text>
+<rect x="3012" y="1158" width="113.265625" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="3024" y="1180" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#686571">oversight</text>
+<path d="M125 360 V400 H35 V2705 H84" fill="none" stroke="#686571" stroke-width="3" stroke-dasharray="7 6" marker-start="url(#m)" marker-end="url(#m)"/>
+<text x="23" y="1990" transform="rotate(-90 23 1990)" font-family="Arial,sans-serif" font-size="21" fill="#686571">AUTHOR · OBSERVE · GOVERN FILE CHANGES</text>
+<path d="M300 360 V385 H60 V1340 H84" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M300 360 V385 H60 V1340 H84" fill="none" stroke="#7561C9" stroke-width="3" stroke-linejoin="round" marker-end="url(#p)"/>
+<circle cx="90" cy="1340" r="6" fill="white" stroke="#7561C9" stroke-width="3"/>
+<text x="80" y="1180" transform="rotate(-90 80 1180)" font-family="Arial,sans-serif" font-size="20" fill="#7561C9">INTENT + PRIORITIES</text>
+<path d="M980 2115 V2175 H2575" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M980 2115 V2175 H2575" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1490 2115 V2175" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M1490 2115 V2175" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<path d="M2460 2115 V2175" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2460 2115 V2175" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1880 2115 V2175" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M1880 2115 V2175" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="980" cy="2115" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<circle cx="1490" cy="2115" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<circle cx="1880" cy="2115" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<circle cx="2460" cy="2115" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<rect x="1518" y="2138" width="294.203125" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1530" y="2160" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#4D7888">traces · findings · outcomes</text>
+<path d="M2510 2800 H2575" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2510 2800 H2575" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="2510" cy="2800" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<path d="M2670 2290 H2575" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2670 2290 H2575" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="2670" cy="2290" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<path d="M760 2540 V2510 H2575" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M760 2540 V2510 H2575" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<path d="M1600 2540 V2510" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M1600 2540 V2510" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<path d="M2460 2540 V2510" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2460 2540 V2510" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="760" cy="2540" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<circle cx="1600" cy="2540" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<circle cx="2460" cy="2540" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<rect x="1703" y="2476" width="160.53125" height="34" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="1715" y="2497" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#4D7888">change events</text>
+<path d="M2575 2800 V590 H2516" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2575 2800 V590 H2516" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round" marker-end="url(#obs)"/>
+<circle cx="2575" cy="2175" r="5" fill="#4D7888"/>
+<circle cx="2575" cy="2290" r="5" fill="#4D7888"/>
+<circle cx="2575" cy="2510" r="5" fill="#4D7888"/>
+<circle cx="2575" cy="2800" r="5" fill="#4D7888"/>
+<circle cx="2510" cy="590" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<path d="M600 430 V366" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round" marker-end="url(#obs)"/>
+<rect x="613" y="383" width="226.703125" height="36" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="625" y="406" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#4D7888">dashboards + alerts</text>
+<path d="M2510 525 H2640 V1435 H2664" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2510 525 H2640 V1435 H2664" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round" marker-end="url(#obs)"/>
+<circle cx="2510" cy="525" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<rect x="2678" y="1125" width="213.921875" height="36" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="2690" y="1148" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="#4D7888">signals + evidence</text>
+<path d="M2200 730 H2540 V1215 H2200 V1234" fill="none" stroke="#F8F7F3" stroke-width="12"/>
+<path d="M2200 730 H2540 V1215 H2200 V1234" fill="none" stroke="#4D7888" stroke-width="3" stroke-linejoin="round" marker-end="url(#obs)"/>
+<circle cx="2200" cy="730" r="6" fill="white" stroke="#4D7888" stroke-width="3"/>
+<rect x="2208" y="1190" width="209.875" height="35" rx="2" fill="#F8F7F3" stroke="#F8F7F3" stroke-width="2"/>
+<text x="2220" y="1212" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#4D7888">alerts / health gaps</text>
+</svg>
