@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When agents outgrow the infrastructure — The Agentic Review</title>
+  <meta name="description" content="Itamar Friedman reviews Anthropic’s source-control redesign through the lens of the software factory: delivery, verification, authority, and improving the factory itself.">
+  <link rel="canonical" href="https://coditamar.github.io/the-agentic-review/articles/when-agents-outgrow-the-infrastructure.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="When agents outgrow the infrastructure">
+  <meta property="og:description" content="My review of Anthropic’s source-control redesign, and what I would take into a software factory.">
+  <meta property="og:url" content="https://coditamar.github.io/the-agentic-review/articles/when-agents-outgrow-the-infrastructure.html">
+  <meta property="og:image" content="https://coditamar.github.io/the-agentic-review/assets/review-001-social.png">
+  <meta property="og:image:alt" content="When agents outgrow the infrastructure. A review by Itamar Friedman.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="article:author" content="Itamar Friedman">
+  <meta property="article:published_time" content="2026-11-07">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../"><span class="mark" aria-hidden="true">a</span>The Agentic Review</a>
+    <nav class="nav" aria-label="Main navigation"><a href="../#reviews">Reviews</a><a class="optional" href="../#about">About</a><a href="https://github.com/coditamar/the-agentic-review">GitHub ↗</a></nav>
+  </header>
+  <main id="main">
+    <header class="article-header">
+      <div class="eyebrow">Review 001 / Infrastructure &amp; software factories</div>
+      <h1>When agents outgrow<br>the infrastructure</h1>
+      <p class="dek">My review of Anthropic’s source-control redesign, and what I would take into a software factory.</p>
+      <div class="byline"><strong>Itamar Friedman</strong><time datetime="2026-11-07">November 7, 2026</time><span>12 minute read</span><a href="https://github.com/coditamar/the-agentic-review/commits/main/articles/when-agents-outgrow-the-infrastructure.html">Revision history ↗</a></div>
+    </header>
+    <div class="article-layout">
+      <aside class="toc" aria-label="Article navigation">
+        <details open>
+          <summary>In this review</summary>
+          <ol>
+            <li><a href="#two-jobs">The factory has two jobs</a></li>
+            <li><a href="#interfaces">Source control as a service</a></li>
+            <li><a href="#work-package">The work package</a></li>
+            <li><a href="#three-pressures">Three pressures</a></li>
+            <li><a href="#release">Merge, then what?</a></li>
+            <li><a href="#improvement">Who improves the factory?</a></li>
+            <li><a href="#failure">Design for the bad day</a></li>
+            <li><a href="#autonomy">What would make this L4?</a></li>
+            <li><a href="#build-buy">Build, buy, and measure</a></li>
+            <li><a href="#verdict">What I would change</a></li>
+          </ol>
+        </details>
+        <a class="contribute" href="https://github.com/coditamar/the-agentic-review/edit/main/articles/when-agents-outgrow-the-infrastructure.html">Suggest a change ↗</a>
+      </aside>
+      <article class="prose" aria-label="Review">
+        <div class="source-note">
+          <p><strong>Reading:</strong> <a href="https://www.anthropic.com/research/redesigning-source-control">Redesigning source control at Anthropic</a>, published October 13, 2026, updated October 15. Anthropic describes Scion, its internal source-control system, and Antique, its review tool. It reports that agent-driven development exposed infrastructure bottlenecks, prompting a redesign around server-side operations, sparse workspaces, and immutable data. It also describes component-monitoring agents and a greater reliance on post-merge, pre-deploy testing.</p>
+          <p>Below is my assessment and proposed operating model. I have not independently validated Anthropic’s performance claims.</p>
+        </div>
+
+        <p>I keep coming back to a question: if we make writing code dramatically faster, what exactly becomes faster for the company?</p>
+        <p>Sometimes the answer is delivery. Sometimes it is the queue in front of the next constraint. More agents can produce more candidates, more conflicting changes, more review findings, and more infrastructure work. The useful question is whether we are getting better at turning intent into working software, at an acceptable cost and risk.</p>
+        <p>This is why I find this article interesting. I read it as a case study in what happens when the system around coding becomes a serious engineering problem. My takeaway is that <strong>the software factory itself becomes something we have to engineer, operate, and continuously improve.</strong> That also makes it worth being precise about what we should copy.</p>
+
+        <h2 id="two-jobs">The factory has two jobs</h2>
+        <p>The way I think about a software factory is that it has two connected jobs. One is to deliver useful software. The other is to improve the system that delivers it. They share evidence, infrastructure, and organizational constraints, but they need different evaluation criteria.</p>
+        <p>The delivery loop might implement a feature or fix a vulnerability. The improvement loop might discover that an agent repeatedly lacks context, replace an inefficient tool, strengthen a verification policy, or improve the way workspaces are provisioned. Success in the second loop should show up in the first: better outcomes, fewer failures, less human intervention, or lower total cost.</p>
+        <p>This is where I see the Software Factory Engineer becoming a distinct discipline. The job is to build, with the engineers across the organization, the thing that builds the thing. Platform engineering experience is highly relevant. The additional responsibility is to make the delivery system capable of acting, learning from its results, and improving within explicit authority.</p>
+
+        <figure>
+          <picture>
+            <source media="(max-width: 600px)" srcset="../assets/two-loops-mobile.svg" width="450" height="770">
+            <img src="../assets/two-loops.svg" width="1000" height="650" alt="Two connected loops under human authority: deliver useful software, and improve the system that delivers it. Both share evidence binding intent, exact versions, verification and authorized actions.">
+          </picture>
+          <figcaption>My operating model: delivery and factory improvement are connected loops. Changes to the factory deserve their own evaluation and rollout discipline. <a href="../assets/two-loops.svg">Open the diagram</a>.</figcaption>
+        </figure>
+
+        <h2 id="interfaces">Give agents better interfaces to the system</h2>
+        <p>One design choice in <a href="https://www.anthropic.com/research/redesigning-source-control">the Scion article</a> is especially useful: repository questions can be answered through a service, without a full local checkout. I would apply that principle well before considering a new version-control system.</p>
+        <p>Suppose a review agent needs to understand a dependency change. It should be able to ask for the relevant diff, ownership, callers, and related history through stable, permissioned interfaces. Materializing a whole workspace to answer a metadata question adds latency, cost, and another place for environment failures. A good interface should also identify the exact revision behind its answer, so the agent cannot accidentally combine facts from different states.</p>
+        <p>Execution can still require a real workspace. I would make that workspace cheap, isolated, and scoped to the task. But <strong>the scope of the workspace must not become the scope of verification.</strong> A two-line change in a shared library can affect services the agent never opened. Dependency-aware verification has to reach beyond the files the agent happened to read.</p>
+
+        <h2 id="work-package">A commit is too small to carry the whole job</h2>
+        <p>For my architecture, the coordination unit is a work package. It connects the requested outcome, acceptance criteria, related code changes, dependencies, build artifacts, verification evidence, and permitted actions. A commit is part of that record. A release may span several commits and repositories.</p>
+        <p>Consider a change to an API response. The backend patch passes its checks, while a client update assumes the new response is already live. Both patches can be locally reasonable and still produce a bad rollout. The work package needs to express the compatibility condition and the deployment sequence. Otherwise, we are coordinating files and hoping that the outcome follows.</p>
+        <p>Evidence also needs an identity. A test result should say which artifact it tested, under which environment and policy. An approval should describe what action it authorizes and against which version. If a dependency, configuration, or candidate changes, the factory must determine which evidence remains valid. Reusing a green result because a branch still has the same name is not a sufficient rule.</p>
+        <p>This is an additional coordination layer I would put around source control. It should remain useful whether the underlying system is Git, Scion, or something else.</p>
+
+        <h2 id="three-pressures">The factory needs three kinds of pressure</h2>
+        <p>I distinguish forward pressure, backpressure, and verification pressure. The distinction helps explain what starts work, what redirects it, and what gives an agent a useful signal for its next attempt.</p>
+        <ul>
+          <li><strong>Forward pressure:</strong> customer requirements, product goals, and opportunities that create demand for a change.</li>
+          <li><strong>Backpressure:</strong> crashes, bug reports, performance regressions, and production feedback showing that reality differs from what we intended.</li>
+          <li><strong>Verification pressure:</strong> tests, linters, security checks, review findings, risk assessment, and rollout observations that help determine whether a candidate is acceptable.</li>
+        </ul>
+        <p>These are roles for signals. An agent can produce more than one kind. A customer-feedback agent might identify a new capability worth building or an existing behavior that is failing. A vulnerability detector generates evidence and proposed work; the fix agent needs separate authority to change and release software.</p>
+        <p>I would connect component-monitoring agents to both loops. A cache-health agent might notice rising timeouts and open work with the observation, affected versions, and proposed response. Pausing a rollout or changing the cache configuration would require separate permissions. Monitoring becomes much more useful when the path from a signal to an authorized response is clear.</p>
+        <p>The agent’s hill climb is only useful if the outcome is meaningful. It is easy to optimize for fewer findings by weakening the checks, or for passing tests by changing the tests. I want the factory to improve its verification, but it must preserve the distinction between proposing a new criterion and earning permission to use it.</p>
+
+        <h2 id="release">Faster integration needs a credible release boundary</h2>
+        <p>Anthropic’s move toward <a href="https://www.anthropic.com/research/redesigning-source-control">post-merge, pre-deploy testing</a> is a useful provocation. I would be open to optimistic integration for appropriate work. I would insist on being explicit about what a merge authorizes.</p>
+        <p>Take two changes that independently pass but interact badly. Rapid repair is valuable while they are inside an isolated integration environment. The risk changes if a merge can deploy a service, run a migration, publish a package, or alter a privileged workflow. In that case, the release boundary has effectively moved upstream. Calling the next step “pre-deploy” does not create isolation.</p>
+        <p>I would require the factory to verify the coherent artifact set it intends to release, including relevant configuration and migrations. Then I would use a rollout appropriate to the failure mode: staged deployment, canaries, scoped feature flags, compatibility checks, and a tested recovery path. A flag will not undo a destructive data migration. A revert may not remove an externally published artifact.</p>
+        <p>Changes to credentials, policy enforcement, or the verification system itself deserve protection before they can affect that boundary. Otherwise, the system doing the work can also change the conditions under which its work is accepted.</p>
+        <div class="pull-quote">I want speed inside a boundary whose failure modes we understand.</div>
+
+        <h2 id="improvement">The factory should improve itself. Under what authority?</h2>
+        <p>This is the part I would make more visible in a software-factory architecture. The software factory (SWF) improvement plane should be able to propose and, where authorized, make changes to the agent pool, tools, execution infrastructure, and verification pressure. It should also improve rules, skills, and policies stored as versioned artifacts.</p>
+        <p>For example, repeated vulnerability findings might justify a specialized detection agent and a separate fix agent. Repeated context failures might justify better retrieval or a different workspace strategy. Neither requires a universal “better agent.” We need evidence that a specific change improves a specific class of work.</p>
+        <p>I would give each factory change a candidate version, representative evaluations, an independent decision about acceptance, and a staged rollout. The proposer should not be able to silently relax the evaluation that decides whether its proposal succeeds. Humans define the authority boundaries and can inspect or revise them; agents can operate within those boundaries without waiting for a person at every step.</p>
+        <p>Observability belongs between the human plane and the SWF plane. Both need to see what happened, why a decision was made, what evidence was used, and what changed afterward. Short-term session memory can retain review notes and failed attempts. Long-term knowledge should preserve validated lessons and incident history, with provenance and a way to correct stale conclusions. A confident memory of a wrong lesson can make the factory consistently worse.</p>
+
+        <h2 id="failure">Design for the day the services disagree</h2>
+        <p>My concern with any highly connected factory is how it behaves when evidence or control services become unavailable. An agent might still have code, a cached policy, and an old approval while the identity service or verification service is down. What exactly is it allowed to do?</p>
+        <p>I would define degraded modes by action and risk. Some work can continue against a stable snapshot. Some results can be prepared and held. A privileged release might require fresh evidence that cannot be reconstructed locally. The important thing is that losing access to the service enforcing a boundary does not expand the agent’s authority.</p>
+        <p>Factory evaluations should include stale approvals, concurrent edits, missing telemetry, unavailable tools, exhausted budgets, and failed rollback. They should test whether the system detects uncertainty, stops the right actions, preserves evidence, and recovers safely. Happy-path completion rate tells us little about those properties.</p>
+        <p>This also changes how I think about escalation. Asking a human is sometimes the right action, but a message is not containment. If the human is asleep, the system still needs a bounded response: pause a rollout, isolate a job, revoke a scoped capability, or hold a candidate. The appropriate response depends on the failure.</p>
+
+        <h2 id="autonomy">What would make this L4?</h2>
+        <p>For this review, I use L4 to mean that the factory can independently execute, verify, and deliver defined classes of changes within explicit organizational boundaries. It knows when judgment is needed and can contain the situation while waiting for it. This is a working definition for our architecture, not a claim of an industry-wide standard.</p>
+        <p>By that definition, I would not infer L4 from this case study. The <a href="https://www.anthropic.com/research/redesigning-source-control">article still places humans in every change review</a>. That may be an excellent operating choice. It leaves a different question unanswered: which classes of work can complete safely without timely human intervention?</p>
+        <p>I would assess autonomy per workflow. A factory could be highly autonomous for dependency updates under a narrow policy and require substantial human judgment for authorization logic or data migrations. “Human approved” also needs context: did the person resolve a real ambiguity, make a consequential tradeoff, or rubber-stamp a result because the volume was impossible to review?</p>
+        <p>The goal should be to reserve human attention for decisions where it changes the outcome, while preserving accountability for the boundaries the organization chooses.</p>
+
+        <h2 id="build-buy">Build versus buy is part of the engineering job</h2>
+        <p><a href="https://www.anthropic.com/research/redesigning-source-control">Anthropic explicitly cautions</a> that its workload and internal token economics are unusual, and that Scion is not a general replacement for Git. My first move would be to measure where our factory is constrained, then compare improving existing tools, buying a capability, and building one. A spectacular infrastructure project elsewhere does not establish the economics for our environment.</p>
+        <p>The Software Factory Engineer should be expected to buy external solutions when they solve the problem well. Building the thing that builds the thing does not require owning every component. It requires owning the system-level decisions: interfaces, evidence, permissions, failure behavior, cost, and the ability to replace a component.</p>
+        <p>BYO-cloud, BYO-agent, and BYO-keys fit here as controlled interfaces. A human or the SWF plane could propose another agent. Registering that agent should establish its capabilities, permissions, data access, evaluation results, and rollout policy. A key should be a scoped secret reference managed by the execution environment, rather than something copied into the agent’s working context.</p>
+        <p>I would measure accepted outcomes, escaped defects, recovery time, total human attention, and total cost. More merged changes can indicate capacity. It can also indicate rework. If a factory doubles its output while tripling the effort needed to understand and repair it, we have more engineering to do.</p>
+
+        <h2 id="verdict">What I would change in our architecture</h2>
+        <p>I would make three additions explicit. First, source-control and workspace services as named infrastructure capabilities, with versioned answers and clear permissions. Second, dependency-aware integration and release verification tied to the work package. Third, degraded-mode and containment policies that remain meaningful when the usual services or people are unavailable.</p>
+        <p>I would also make the improvement loop impossible to miss. It must connect to verification, rules, skills, policies, agent and tool pools, and the execution environment. Those connections represent real authority to change the factory, so they need observable decisions and controlled rollout.</p>
+        <p>My view after reading the article: source control belongs in the software-factory conversation. So do the economics and consequences of changing it. I would take the interface and operating-model lessons seriously, then require evidence that each change makes our own delivery system better.</p>
+        <p>That is the engineering challenge I find most interesting: a factory that can improve the way it works, while remaining accountable for the software it delivers.</p>
+
+        <section class="contribution" aria-labelledby="contribute-title">
+          <h2 id="contribute-title">Feel free to copy, adapt, and challenge it.</h2>
+          <p>See a weak assumption, a missing failure mode, or a better way to explain this? <a href="https://github.com/coditamar/the-agentic-review/edit/main/articles/when-agents-outgrow-the-infrastructure.html">Suggest a change to this review</a> through a pull request, or <a href="https://github.com/coditamar/the-agentic-review/issues/new?title=Review%20001%3A%20">open a discussion as an issue</a>.</p>
+          <p><a href="https://github.com/coditamar/the-agentic-review/blob/main/CONTRIBUTING.md">Contribution guide</a> · <a href="https://github.com/coditamar/the-agentic-review/blob/main/articles/when-agents-outgrow-the-infrastructure.html">Article source</a> · <a href="https://github.com/coditamar/the-agentic-review/commits/main/articles/when-agents-outgrow-the-infrastructure.html">Revision history</a></p>
+        </section>
+        <div class="footnote">
+          <p><strong>Source and scope.</strong> This is an independent review of <a href="https://www.anthropic.com/research/redesigning-source-control">Anthropic’s article</a>, read November 7, 2026. The architecture, examples, and recommendations here are my own interpretation; they do not describe an implementation I have audited. The diagram is original to this review. I am <a href="https://www.qodo.ai/about/">Qodo’s co-founder and CEO</a>. This article expresses my perspective and is not a product evaluation.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><span>© 2026 Itamar Friedman · The Agentic Review</span><span><a href="../">All reviews</a> · <a href="https://github.com/coditamar/the-agentic-review">Source &amp; contributions</a> · <a href="https://github.com/coditamar/the-agentic-review/blob/main/LICENSE">CC0 1.0</a></span></footer>
+</body>
+</html>

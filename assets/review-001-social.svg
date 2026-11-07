@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f5f0"/>
+  <g fill="#242721">
+    <text x="65" y="73" font-family="sans-serif" font-size="22" font-weight="600">The Agentic Review</text>
+    <text x="65" y="153" font-family="monospace" font-size="17" letter-spacing="2" fill="#62665d">REVIEW 001 / BY ITAMAR FRIEDMAN</text>
+    <text x="60" y="259" font-family="Georgia,serif" font-size="79" letter-spacing="-3">When agents outgrow</text>
+    <text x="60" y="349" font-family="Georgia,serif" font-size="79" letter-spacing="-3">the infrastructure</text>
+    <text x="65" y="410" font-family="sans-serif" font-size="25" fill="#62665d">Anthropic’s source-control redesign, through a software-factory lens.</text>
+    <path d="M65 455H1135" stroke="#d5d7cd"/>
+    <circle cx="83" cy="513" r="7" fill="#655394"/>
+    <text x="106" y="522" font-family="sans-serif" font-size="26">Deliver useful software.</text>
+    <circle cx="83" cy="561" r="7" fill="#35614a"/>
+    <text x="106" y="570" font-family="sans-serif" font-size="26">Improve the system that delivers it.</text>
+  </g>
+</svg>

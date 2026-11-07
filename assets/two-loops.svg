@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+  <title id="title">Two jobs, two connected loops</title>
+  <desc id="desc">The delivery loop turns intent into a candidate, verification and release. Production evidence returns to intent. The improvement loop observes the delivery system, evaluates proposed changes, and rolls out changes to rules, skills, policies, agents, tools and infrastructure. Human authority defines the boundaries of both loops. Evidence binds intent, versions, verification and authorized actions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#62665d" opacity=".65"/></marker>
+  </defs>
+  <rect width="1000" height="650" fill="#eeece5"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#242721">
+    <text x="45" y="47" font-size="13" letter-spacing="2" fill="#62665d">THE SOFTWARE FACTORY / AN OPERATING MODEL</text>
+    <rect x="45" y="75" width="910" height="72" rx="5" fill="#fffefa" stroke="#d5d7cd"/>
+    <text x="65" y="105" font-size="19" font-weight="600">Human authority</text>
+    <text x="65" y="130" font-size="16" fill="#62665d">Goals · risk boundaries · permissions · escalation and containment policy</text>
+    <path d="M500 147V177" stroke="#62665d" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+    <rect x="45" y="180" width="910" height="203" rx="5" fill="#f7f5f0" stroke="#c2b9d3"/>
+    <text x="65" y="212" font-size="14" fill="#655394" letter-spacing="1.5">01 / DELIVER USEFUL SOFTWARE</text>
+    <g fill="#fffefa" stroke="#d5d7cd">
+      <rect x="65" y="235" width="175" height="66" rx="4"/>
+      <rect x="295" y="235" width="175" height="66" rx="4"/>
+      <rect x="525" y="235" width="175" height="66" rx="4"/>
+      <rect x="755" y="235" width="175" height="66" rx="4"/>
+    </g>
+    <g font-size="19" text-anchor="middle"><text x="152" y="275">Intent</text><text x="382" y="275">Candidate</text><text x="612" y="275">Verify</text><text x="842" y="275">Authorize / release</text></g>
+    <g stroke="#62665d" fill="none" marker-end="url(#arrow)"><path d="M240 268H295"/><path d="M470 268H525"/><path d="M700 268H755"/><path d="M842 301V331H152V301"/></g>
+    <text x="497" y="358" font-size="16" text-anchor="middle" fill="#62665d">Production evidence → new work, correction, or containment</text>
+    <path d="M500 383V420" stroke="#62665d" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <rect x="45" y="423" width="910" height="120" rx="5" fill="#fffefa" stroke="#a4b9a9"/>
+    <text x="65" y="456" font-size="14" letter-spacing="1.5" fill="#35614a">02 / IMPROVE THE SYSTEM THAT DELIVERS IT</text>
+    <text x="65" y="491" font-size="20">Observe → propose → independently evaluate → staged rollout</text>
+    <text x="65" y="521" font-size="16" fill="#62665d">Rules · skills · policies · agent and tool pools · execution infrastructure</text>
+    <path d="M275 543V568H725V543" stroke="#62665d" fill="none" marker-end="url(#arrow)"/>
+    <text x="500" y="610" text-anchor="middle" font-size="16" fill="#62665d">Shared evidence: intent + exact versions + verification + authorized actions</text>
+  </g>
+</svg>

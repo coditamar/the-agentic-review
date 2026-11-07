@@ -1,0 +1,4 @@
+_site/
+.qodo/
+__pycache__/
+.DS_Store
