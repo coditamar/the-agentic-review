@@ -28,7 +28,7 @@
       <div class="eyebrow">Review 001 / Infrastructure &amp; software factories</div>
       <h1>When agents outgrow<br>the infrastructure</h1>
       <p class="dek">My review of Anthropic’s source-control redesign, and what I would take into a software factory.</p>
-      <div class="byline"><strong>Itamar Friedman</strong><time datetime="2026-11-07">November 7, 2026</time><span>12 minute read</span><a href="https://github.com/coditamar/the-agentic-review/commits/main/articles/when-agents-outgrow-the-infrastructure.html">Revision history ↗</a></div>
+      <div class="byline"><strong>Itamar Friedman</strong><time datetime="2026-11-07">November 7, 2026</time><span>15 minute read</span><a href="https://github.com/coditamar/the-agentic-review/commits/main/articles/when-agents-outgrow-the-infrastructure.html">Revision history ↗</a></div>
     </header>
     <div class="article-layout">
       <aside class="toc" aria-label="Article navigation">
@@ -41,6 +41,7 @@
             <li><a href="#three-pressures">Three pressures</a></li>
             <li><a href="#release">Merge, then what?</a></li>
             <li><a href="#improvement">Who improves the factory?</a></li>
+            <li><a href="#checking-system">Who checks the checker?</a></li>
             <li><a href="#failure">Design for the bad day</a></li>
             <li><a href="#autonomy">What would make this L4?</a></li>
             <li><a href="#build-buy">Build, buy, and measure</a></li>
@@ -107,6 +108,31 @@
         <p>I would give each factory change a candidate version, representative evaluations, an independent decision about acceptance, and a staged rollout. The proposer should not be able to silently relax the evaluation that decides whether its proposal succeeds. Humans define the authority boundaries and can inspect or revise them; agents can operate within those boundaries without waiting for a person at every step.</p>
         <p>Observability belongs between the human plane and the SWF plane. Both need to see what happened, why a decision was made, what evidence was used, and what changed afterward. Short-term session memory can retain review notes and failed attempts. Long-term knowledge should preserve validated lessons and incident history, with provenance and a way to correct stale conclusions. A confident memory of a wrong lesson can make the factory consistently worse.</p>
 
+        <h2 id="checking-system">Who checks the checking system?</h2>
+        <p>Suppose a change fails ten tests. The factory weakens their assertions until they pass. The dashboard improves, while the defect remains. This is the uncomfortable question inside a self-improving factory: how does it demonstrate improvement when it can also change the measure of improvement?</p>
+        <p>I want independent challenge at three points in the work:</p>
+        <ul>
+          <li><strong>Challenge the plan.</strong> Does it address the intended outcome? Are the assumptions, acceptance criteria, dependencies, and rollout strategy sound? Implementation and verification can otherwise agree on the wrong solution.</li>
+          <li><strong>Challenge the implementation.</strong> Does the actual change satisfy that intent across the affected system, including interactions and failure behavior beyond the edited files?</li>
+          <li><strong>Challenge the verification.</strong> Would the checks detect a materially wrong implementation? Look for missing cases, weakened assertions, skipped checks, narrower coverage, and changed risk thresholds.</li>
+        </ul>
+        <p>The factory should still improve its tests. Existing tests can be flaky, obsolete, or based on an incorrect assumption. I would treat a change to the checking system as its own versioned work package, with a specific claim about what improves and what might stop being detected.</p>
+        <p>Run the existing and proposed checks against protected reference evidence: valid behavior, known failures, and deliberately broken implementations. Investigate where their judgments differ. Can the new checking system still recognize software we know is wrong? The original defect should remain detectable, or the expected behavior should have a separately authorized change. Representative held-out cases can help test whether the improvement generalizes; a passing reference set is still evidence with limits.</p>
+
+        <figure id="verification-flow">
+          <picture>
+            <source media="(max-width: 600px)" srcset="../assets/verification-change-mobile.svg" width="450" height="1110">
+            <img src="../assets/verification-change.svg" width="1000" height="820" alt="Independent challenge reviews the plan, implementation and verification. Proposed changes to the checker are evaluated against protected reference evidence, independently authorized, staged and observed. Qodo agent, tool and infrastructure badges indicate proposed contributions; the organization retains adoption and release authority.">
+          </picture>
+          <figcaption>A proposed verification-change gate. The A / T / I badges identify potential Qodo contributions as agents, tools, and shared infrastructure. <a href="../assets/software-factory-architecture-v10.svg">Full architecture</a> · <a href="../assets/software-factory-architecture-v10-qodo.svg">Architecture with the proposed Qodo overlay</a>.</figcaption>
+        </figure>
+
+        <p><strong>Independence needs to exist in authority and evidence.</strong> A second agent working from the same mistaken specification can repeat the same mistake. A different model alone does not establish independent verification. The proposer should not be able to rewrite the protected reference set or acceptance policy and then use that change to certify itself. Accountable owners decide consequential changes to those boundaries; routine improvements can operate under preauthorized rules.</p>
+        <p>I would make the adoption path explicit: propose a verifier version, evaluate it against protected reference evidence, independently authorize its adoption, then stage and observe the result. The decision record should preserve the candidate, reference-set and policy versions, changed verdicts, acceptance rationale, and recovery conditions. The active verification boundary changes only after that decision.</p>
+        <h3>Where I see Qodo contributing</h3>
+        <p>My proposed role for Qodo is to challenge the plan, implementation, and verification. Those contributions can take several forms: an <strong>agent</strong> that conducts a review, a <strong>tool</strong> another agent calls for context or findings, or <strong>shared infrastructure</strong> supporting organizational context, standards, and review evidence. The overlay shows where I would connect those contributions. It is a proposed operating model, rather than an inventory of capabilities available today. The organization retains authority to adopt criteria and authorize releases.</p>
+        <p>Basic observability belongs in this first step. We need to know what changed, which checks ran or were skipped, which evidence was used, and why a result was accepted. Richer production-monitoring agents can follow. Production feedback then helps expose failures the pre-release checks missed.</p>
+
         <h2 id="failure">Design for the day the services disagree</h2>
         <p>My concern with any highly connected factory is how it behaves when evidence or control services become unavailable. An agent might still have code, a cached policy, and an old approval while the identity service or verification service is down. What exactly is it allowed to do?</p>
         <p>I would define degraded modes by action and risk. Some work can continue against a stable snapshot. Some results can be prepared and held. A privileged release might require fresh evidence that cannot be reconstructed locally. The important thing is that losing access to the service enforcing a boundary does not expand the agent’s authority.</p>
@@ -126,7 +152,7 @@
         <p>I would measure accepted outcomes, escaped defects, recovery time, total human attention, and total cost. More merged changes can indicate capacity. It can also indicate rework. If a factory doubles its output while tripling the effort needed to understand and repair it, we have more engineering to do.</p>
 
         <h2 id="verdict">What I would change in our architecture</h2>
-        <p>I would make three additions explicit. First, source-control and workspace services as named infrastructure capabilities, with versioned answers and clear permissions. Second, dependency-aware integration and release verification tied to the work package. Third, degraded-mode and containment policies that remain meaningful when the usual services or people are unavailable.</p>
+        <p>I would make four additions explicit. First, source-control and workspace services as named infrastructure capabilities, with versioned answers and clear permissions. Second, dependency-aware integration and release verification tied to the work package. Third, a separate adoption gate for changes to the checking system, evaluated against protected reference evidence. Fourth, degraded-mode and containment policies that remain meaningful when the usual services or people are unavailable.</p>
         <p>I would also make the improvement loop impossible to miss. It must connect to verification, rules, skills, policies, agent and tool pools, and the execution environment. Those connections represent real authority to change the factory, so they need observable decisions and controlled rollout.</p>
         <p>My view after reading the article: source control belongs in the software-factory conversation. So do the economics and consequences of changing it. I would take the interface and operating-model lessons seriously, then require evidence that each change makes our own delivery system better.</p>
         <p>That is the engineering challenge I find most interesting: a factory that can improve the way it works, while remaining accountable for the software it delivers.</p>
@@ -137,7 +163,7 @@
           <p><a href="https://github.com/coditamar/the-agentic-review/blob/main/CONTRIBUTING.md">Contribution guide</a> · <a href="https://github.com/coditamar/the-agentic-review/blob/main/articles/when-agents-outgrow-the-infrastructure.html">Article source</a> · <a href="https://github.com/coditamar/the-agentic-review/commits/main/articles/when-agents-outgrow-the-infrastructure.html">Revision history</a></p>
         </section>
         <div class="footnote">
-          <p><strong>Source and scope.</strong> This is an independent review of <a href="https://www.anthropic.com/research/redesigning-source-control">Anthropic’s article</a>, read November 7, 2026. The architecture, examples, and recommendations here are my own interpretation; they do not describe an implementation I have audited. The diagram is original to this review. I am <a href="https://www.qodo.ai/about/">Qodo’s co-founder and CEO</a>. This article expresses my perspective and is not a product evaluation.</p>
+          <p><strong>Source and scope.</strong> This is an independent review of <a href="https://www.anthropic.com/research/redesigning-source-control">Anthropic’s article</a>, read November 7, 2026. The architecture, examples, and recommendations here are my own interpretation; they do not describe an implementation I have audited. The diagrams are original layouts; the Qodo mark comes from its <a href="https://www.qodo.ai/media-downloads/">official media kit</a>. I am <a href="https://www.qodo.ai/about/">Qodo’s co-founder and CEO</a>. This article expresses my perspective and is not a product evaluation.</p>
         </div>
       </article>
     </div>
