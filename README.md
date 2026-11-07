@@ -10,6 +10,8 @@ Opinionated reviews of agentic software development and software factories, by I
 
 ## Read, adapt, and challenge
 
+Software factory architecture v11 makes the incident-to-learning flow explicit, separates candidate lessons from validated knowledge, and highlights execution and verification environments. Download the [neutral SVG](assets/software-factory-architecture-v11.svg) / [PNG](assets/software-factory-architecture-v11.png), or the [proposed Qodo contribution SVG](assets/software-factory-architecture-v11-qodo.svg) / [PNG](assets/software-factory-architecture-v11-qodo.png). Earlier versions remain available in `assets/`.
+
 Each article is a standalone HTML page in `articles/`. The published page has links to propose changes, open an issue, and view revision history. To contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Local preview
