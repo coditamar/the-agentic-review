@@ -88,7 +88,7 @@ def check():
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"Site checks passed: {len(pages)} pages; local links, fragments, canonical URLs, images, and publication allowlist.")
+    print(f"Site checks passed: {len(pages)} pages; local links, fragments, canonical URLs, images, and preview allowlist.")
     return 0
 
 

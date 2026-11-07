@@ -21,7 +21,7 @@ python3 scripts/check_site.py
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000/`. To assemble the same deployment artifact used by GitHub Pages:
+Open `http://localhost:8000/`. To assemble an isolated preview of the reading pages and assets:
 
 ```sh
 python3 scripts/build_site.py
