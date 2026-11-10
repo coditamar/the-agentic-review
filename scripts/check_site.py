@@ -78,7 +78,7 @@ def check():
     for path in root.rglob("*"):
         if path.is_symlink():
             errors.append(f"symlink in public output: {path.name}")
-        if path.is_file() and path.suffix not in (".html", ".css", ".svg", ".png", ".jpg", ".webp", ".ico") and path.name != ".nojekyll":
+        if path.is_file() and path.suffix not in (".html", ".css", ".svg", ".png", ".jpg", ".webp", ".ico", ".pdf") and path.name != ".nojekyll":
             errors.append(f"unexpected public file: {path.relative_to(root)}")
         if path.suffix == ".svg":
             try:
