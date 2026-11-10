@@ -10,7 +10,7 @@ Opinionated reviews of agentic software development and software factories, by I
 
 ## Read, adapt, and challenge
 
-Software factory architecture v11 makes the incident-to-learning flow explicit, separates candidate lessons from validated knowledge, and highlights execution and verification environments. Download the [neutral SVG](assets/software-factory-architecture-v11.svg) / [PNG](assets/software-factory-architecture-v11.png), or the [proposed Qodo contribution SVG](assets/software-factory-architecture-v11-qodo.svg) / [PNG](assets/software-factory-architecture-v11-qodo.png). Earlier versions remain available in `assets/`.
+Software factory architecture v12 adds triage to the first delivery step, separates agent guidance from factory policy, and places SWF artifacts beside the improvement plane. It retains traceable learning, validated knowledge, and execution/verification environments. Download the [neutral SVG](assets/software-factory-architecture-v12.svg) / [PNG](assets/software-factory-architecture-v12.png), or the [proposed Qodo contribution SVG](assets/software-factory-architecture-v12-qodo.svg) / [PNG](assets/software-factory-architecture-v12-qodo.png). The [A4 print edition](assets/software-factory-architecture-v12-qodo-a4.pdf) has an overview and four readable detail pages. Earlier versions remain available in `assets/`.
 
 Each article is a standalone HTML page in `articles/`. The published page has links to propose changes, open an issue, and view revision history. To contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
