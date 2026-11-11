@@ -5,9 +5,10 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import sys
+import re
 import xml.etree.ElementTree as ET
 
-from build_site import build
+from build_site import ROOT, build
 
 
 class Page(HTMLParser):
@@ -85,10 +86,35 @@ def check():
                 ET.parse(path)
             except ET.ParseError as error:
                 errors.append(f"invalid SVG: {path.name}: {error}")
+    # Inspect both public content and files visible in the repository, not just linked pages.
+    # These checks catch common publication mistakes; an editorial review is still required.
+    blocked = (
+        ("private conversation link", re.compile(r"https?://[^\s\"<>]*slack\.com/(?:archives|files)/", re.I)),
+        ("local filesystem path", re.compile(r"(?:/Users/|/home/|file:///)", re.I)),
+        ("private key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----")),
+        ("service credential", re.compile(r"(?:sk-(?:proj-|svcacct-)[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|xox[baprs]-[A-Za-z0-9-]{20,})")),
+        ("implementation assessment", re.compile(r"implementation[-_ ]status", re.I)),
+    )
+    for source in ROOT.rglob("*"):
+        relative = source.relative_to(ROOT)
+        if any(part in {".git", "_site", "__pycache__", ".qodo"} for part in relative.parts):
+            continue
+        if source.is_symlink():
+            errors.append(f"symlink in repository: {relative}")
+            continue
+        if not source.is_file():
+            continue
+        if re.search(r"implementation[-_ ]status", source.name, re.I):
+            errors.append(f"implementation assessment asset: {relative}")
+        if source.suffix in {".html", ".svg", ".css", ".md", ".json", ".txt"}:
+            content = source.read_text()
+            for label, pattern in blocked:
+                if pattern.search(content):
+                    errors.append(f"{relative}: {label}")
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"Site checks passed: {len(pages)} pages; local links, fragments, canonical URLs, images, and preview allowlist.")
+    print(f"Site checks passed: {len(pages)} pages; local links, fragments, canonical URLs, images, preview allowlist, and publication boundary scan.")
     return 0
 
 

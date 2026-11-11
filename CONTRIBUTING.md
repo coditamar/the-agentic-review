@@ -34,3 +34,7 @@ Keep primary sources close to the claims they support. Create original diagrams 
 ## Publication
 
 The maintainer should run the local site checks before accepting a pull request. GitHub Pages publishes directly from `main / (root)` after a merge, with no custom workflow or separate generated article copy. All tracked content is public, including documentation and validation scripts. Keep secrets and working context out of the repository. Published changes remain traceable through Git history.
+
+## Public-content boundary
+
+Use public sources and clearly labeled architectural proposals. Do not publish company-internal implementation assessments, operational details, private conversations, unreleased product plans, customer information, credentials, or internal identifiers. Removing names alone does not make internal information suitable for publication. Review SVG titles/descriptions, image metadata, PDF text/metadata, documentation, and pull-request descriptions as well as visible article text. Keep working notes outside this repository.
